@@ -1,0 +1,73 @@
+.bg {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.dog {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    background: transparent url(./images/dog.png);
+    width: 302px;
+    height: 205px;
+    transform: translate(-50%, -50%);
+    margin: 2em auto;
+    animation: run 1s steps(21) infinite;
+}
+
+@keyframes run {
+    0% {
+        background-position: 0px 0;
+    }
+    100% {
+        background-position: -6385px 0; 
+    }
+}
+
+
+h3.title{
+    width: 100%;
+    height: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: -50px;
+    color: #555;
+    font-size: 30px;
+    text-align: center;
+}
+
+input.left, input.right,
+span.left, span.right {
+    position: absolute;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+span.left, span.right {
+    font-size: 20px;
+}
+
+input.left, span.left {
+    left: 0;
+}
+
+input.right, span.right {
+    right: 0;
+}
+
+/* hide radio buttons */
+input.left, input.right {
+    opacity: 0;
+}
+/* if left radio button is checked, change direction of dog 150deg */
+.left:checked ~ .dog {
+    transform: translate(-50%, -50%) rotateY(150deg);
+}
